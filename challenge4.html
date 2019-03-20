@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script>
+    
+    function changeimg1(){
+        var imgs = document.querySelector("#image")
+        var prev = document.querySelectorAll(".preview")
+        imgs.innerHTML = "<img src = " + prev[0].src + " width = 388px height = 325px>"
+    }
+     function changeimg2(){
+        var imgs = document.querySelector("#image")
+        var prev = document.querySelectorAll(".preview")
+        imgs.innerHTML = "<img src = " + prev[1].src + " width = 388px height = 325px>"
+    }
+     function changeimg3(){
+        var imgs = document.querySelector("#image")
+        var prev = document.querySelectorAll(".preview")
+        imgs.innerHTML = "<img src = " + prev[2].src + " width = 388px height = 325px>"
+
+    }
+    function exitim(){
+        var imgs = document.querySelector("#image")
+        var prev = document.querySelectorAll(".preview")
+        imgs.innerHTML = "Hover or tab over/into an image below."
+    }
+
+
+    </script>
+</head>
+
+
+<body>
+    <h1>Challenge 5</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" onmouseover="changeimg1()" onfocus="changeimg1()" onmouseleave= "exitim()" width="100%" 
+            alt = "Styling with a Bandana" 
+            src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg">
+
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->  
+        <img class = "preview" onmouseover="changeimg2()" onfocus="changeimg1()" onmouseleave= "exitim()"
+            alt = "With My Boy" 
+            src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG">
+    
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" onmouseover="changeimg3()"  onfocus="changeimg1()" onmouseleave= "exitim()" tabindex = "1" 
+            src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
+            alt = "Young Puppy">
+</body>
+</html>
+    
