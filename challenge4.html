@@ -37,24 +37,14 @@
     </style>
 
     <script>
-    
-    function changeimg1(){
-        var imgs = document.querySelector("#image")
-        var prev = document.querySelectorAll(".preview")
-        imgs.innerHTML = "<img src = " + prev[0].src + " width = 388px height = 325px>"
-    }
-     function changeimg2(){
-        var imgs = document.querySelector("#image")
-        var prev = document.querySelectorAll(".preview")
-        imgs.innerHTML = "<img src = " + prev[1].src + " width = 388px height = 325px>"
-    }
-     function changeimg3(){
-        var imgs = document.querySelector("#image")
-        var prev = document.querySelectorAll(".preview")
-        imgs.innerHTML = "<img src = " + prev[2].src + " width = 388px height = 325px>"
 
-    }
-    function exitim(){
+         function changeimage(model){
+
+            var imgs = document.querySelector("#image")
+            var prev = document.querySelectorAll(".preview")
+            imgs.innerHTML = "<img src = " + model.src + " width = 388px height = 325px>"
+        }
+    function exitItem(){
         var imgs = document.querySelector("#image")
         var prev = document.querySelectorAll(".preview")
         imgs.innerHTML = "Hover or tab over/into an image below."
@@ -72,18 +62,18 @@
         </div>
 
         <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
-        <img class = "preview" onmouseover="changeimg1()" onfocus="changeimg1()" onmouseleave= "exitim()" width="100%" 
+        <img class = "preview" onmouseover="changeimage(this)" onfocus="changeimage(this)" onmouseleave= "exitItem()" onblur= "exitItem()" tabindex = "1"
             alt = "Styling with a Bandana" 
             src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg">
 
 
         <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->  
-        <img class = "preview" onmouseover="changeimg2()" onfocus="changeimg1()" onmouseleave= "exitim()"
+        <img class = "preview" onmouseover="changeimage(this)" onfocus="changeimage(this)" onmouseleave= "exitItem()" onblur= "exitItem()" tabindex = "2"
             alt = "With My Boy" 
             src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG">
     
         <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
-        <img class = "preview" onmouseover="changeimg3()"  onfocus="changeimg1()" onmouseleave= "exitim()" tabindex = "1" 
+        <img class = "preview" onmouseover="changeimage(this)"  onfocus="changeimage(this)" onmouseleave= "exitItem()" onblur= "exitItem()" tabindex = "3" 
             src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
             alt = "Young Puppy">
 </body>
