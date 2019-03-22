@@ -17,21 +17,26 @@ When you test your form at the moment, you'll notice that you can click on the c
 
 
     <style>
-    /*    YOUR CSS CODE HERE */ 
+      #emailfield{
+        display: none;
+      }
     </style>
     
     <script>
+
 	function toggleEmail(){
 	   console.log("Hi There")
      var box = document.querySelector('#subscribe')
      var email = document.getElementById('emailfield')
-     if(box.checked == true){
-        email.style.display = "Block";
+     var checke = box.checked
+
+
+     if(checke == true){
+        email.style.display = "Block"; 
       }
     else{
         email.style.display = "None";
      }
-
 	} 
     </script>
   </head>
