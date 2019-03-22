@@ -10,12 +10,44 @@
       color:red;
       display:none; } 
     </style>
-    <script   src="http://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
-  
+    
+    <script>
+    function checkForm(){
+        console.log("Yep, my function is being called")
+        var name = document.querySelector("#name")
+        var addr = document.querySelector("#addr")
+        var err1 = document.querySelector("#nameError")
+        var err2 = document.querySelector("#addressError")
+        var valid = true;
+
+        if(name.value == ""){
+          err1.style.display = 'block';
+          valid = false;
+        }
+        else {
+          err1.style.display = 'none';
+        }
+        
+       
+
+        if(addr.value == ""){
+          err2.style.display = 'block';
+          valid = false;
+        }
+        else 
+          err2.style.display = 'none';
+        
+
+      return valid;
+    }
+
+      // Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
+    
+    </script>
 </head>
 <body>
     <h1>Challenge 3</h1>
-  <form action="challenge4.html">
+  <form action="challenge4.html" onsubmit= "return checkForm();">
         <fieldset>
         <legend>Personal details</legend>
           <label for="name">Full name: </label>
@@ -29,33 +61,5 @@
         </fieldset>
         <input type="submit" value="Submit it!"> 
     </form>
-
-    <script>
-      $("form").submit(function(){
-        var valid = true;
-        
-        $("form input [type=text]").each(function(){
-          if(this.val("")){
-           valid.val("false")
-          
-          $(this).next('p').addClass("errorMsg");
-        }
-        else{
-          $(this).next('p').removeClass("errorMsg");
-          valid.val("true")
-        }
-      });
-
-        if (valid == false){
-          event.preventDefault();
-          return false;
-        }
-      });
-
-
-
-
-    </script>
-
 </body>
 </html>
